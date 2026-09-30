@@ -22,6 +22,7 @@ public class main {
             if (controller.getuTemp() != null) {
                 do{
                     op = pintaMenuPrincipal(controller.getuTemp());
+                    Utilidades.limpiarPantalla();
                     //El usuario es admin
                     if (controller.getuTemp().isAdmin()){
                         switch (op){
@@ -158,6 +159,7 @@ public class main {
         String op;
         do{
             op = pintaMenuGestionaProductos();
+            Utilidades.limpiarPantalla();
             switch (op){
                 case "1":
                     usaMenuProductos(controller,controller.buscaProductoPorNombre(preguntaPers("Introduce el nombre a buscar")));
@@ -204,6 +206,7 @@ public class main {
         Producto producto;
         do{
             producto = seleccionaProducto(productos);
+            Utilidades.limpiarPantalla();
             if (producto != null) gestionaCompra(producto,controller);
         }while(producto != null);
     }
@@ -235,6 +238,7 @@ public class main {
         String op;
         do{
             op = pintaMenuAdmin();
+            Utilidades.limpiarPantalla();
             switch (op){
                 case "1":
                     addProducto(controller);
@@ -312,6 +316,7 @@ public class main {
                       7. Electrodomesticos
                       8. Videojuegos""");
             numCategoria = pedirInt("Introduce una opción");
+            Utilidades.limpiarPantalla();
             switch (numCategoria){
                 case 1:
                     return "Moviliario";
@@ -437,6 +442,7 @@ public class main {
         String op;
         do{
             op = pintaMenuCarrito();
+            Utilidades.limpiarPantalla();
             switch (op){
                 case "1":
                     System.out.println(controller.pintaCarrito());
